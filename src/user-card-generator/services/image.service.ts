@@ -4,6 +4,7 @@ export class ImageService {
   async htmlToImage(html: string): Promise<Buffer> {
     console.log('Launching browser...');
     const browser = await puppeteer.launch({
+      executablePath: '/usr/bin/chromium-browser',
       args: ['--no-sandbox', '--disable-setuid-sandbox']
     });
     console.log('Browser launched');
