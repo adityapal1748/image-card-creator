@@ -4,7 +4,7 @@ export class ImageService {
   async htmlToImage(html: string): Promise<Buffer> {
     console.log('Launching browser...');
     const browser = await puppeteer.launch({
-      args: ['--no-sandbox']
+      args: ['--no-sandbox','--disable-setuid-sandbox']
     });
     console.log('Browser launched');
     const page = await browser.newPage();
